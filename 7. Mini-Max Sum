@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void miniMaxSum(int arr_count, int* arr) {
+    long totalSum = 0;
+    long minVal = arr[0];
+    long maxVal = arr[0];
+    
+    for (int i = 0; i < arr_count; i++) {
+        long current = arr[i];
+        totalSum += current;
+        if (current < minVal) minVal = current;
+        if (current > maxVal) maxVal = current;
+    }
+    
+    printf("%ld %ld\n", totalSum - maxVal, totalSum - minVal);
+}
